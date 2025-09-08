@@ -41,39 +41,75 @@ section {
   padding: 24px 16px;
 }
 
-/* Hero Section Styles */
+/* Header styles for logo placement */
+header {
+  background: #222;
+  padding: 0;
+}
+.charity-logo {
+  height: 60px;
+  margin: 16px 0 0 16px; /* Top and left margin */
+}
+
+/* Hero Section with two columns */
 .hero {
-  position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;      /* Make the image cover the whole area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
-
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
+  background: none;
+  color: #222;
+  text-align: left;
+  padding: 40px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  box-shadow: none;
 }
 
-/* Make the headline bold and modern */
-.hero h1 {
-  font-size: 2.5em;
+/* Left column for text */
+.hero-content {
+  flex: 1;
+  max-width: 500px;
+}
+.hero-content h1 {
+  font-size: 2em;
+  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+  color: #222;
+  margin-bottom: 16px;
+}
+.hero-content p {
+  font-size: 1.1em;
+  color: #2E9DF7;
+  margin-bottom: 24px;
+}
+
+/* Accept Challenge Button */
+.donate-button {
+  background-color: #FFC907;
+  color: #222;
+  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+  padding: 14px 32px;
+  border-radius: 8px;
   font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
+  font-size: 1.1em;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
+  transition: background 0.3s, transform 0.2s;
+  text-align: center;
+  display: inline-block;
+}
+.donate-button:hover {
+  background-color: #FF902A;
 }
 
-/* Style the subheadline */
-.hero p {
-  font-size: 1.2em;
-  margin-top: 0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+/* Right column for image */
+.hero-image {
+  flex: 1;
+  max-width: 400px;
+  min-width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
+  width: 100%;
+  height: auto;
 }
 
 /* Story Section Styles */
@@ -108,32 +144,21 @@ h2 {
   box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
 }
 
-/* Donate Button Styles */
-.donate-button {
-  display: inline-block;
-  background-color: #4FCB53; /* Green */
-  color: #fff;
-  padding: 14px 32px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
-  transition: background 0.3s, transform 0.2s;
-  border: none;
-  cursor: pointer;
-}
-
-/* Change button color when hovered */
-.donate-button:hover {
-  background-color: #159A48; /* Dark Green */
-  transform: translateY(-2px) scale(1.04); /* Slight lift */
-}
-
 /* Add some spacing between sections */
 section {
   margin-bottom: 20px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #222; /* Brand black */
+  color: #fff; /* White text for contrast */
+  text-align: center;
+  padding: 16px 8px;
+  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+  font-size: 1em;
+  margin-top: 30px;
+  border-radius: 0 0 12px 12px;
 }
 
 /* 
@@ -194,5 +219,21 @@ section {
 
   .impact-image {
     width: 300px;
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 5px;
+    text-align: center;
+  }
+  .hero-content {
+    max-width: 100%;
+  }
+  .hero-image {
+    max-width: 90vw;
   }
 }
